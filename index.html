@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photography Is Us - Best Photography Kit with LED Lighting, Tripods, and Pro Equipment. Free delivery, fast shipping, and high quality products.">
+    <meta name="keywords" content="photography, camera kit, LED lighting, tripods, professional equipment">
+    <meta name="author" content="Photography Is Us">
+    <meta property="og:title" content="Photography Is Us - Best Photography Kit">
+    <meta property="og:description" content="Discover the best photography kit with premium LED lighting, tripods, and pro equipment.">
+    <meta property="og:type" content="website">
+    <title>Photography Is Us - Best Photography Kit | Premium Equipment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .accordion-item {
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1f2937;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        
+        .announcement-bar {
+            background: linear-gradient(90deg, #1f2937 0%, #374151 100%);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="scroll-smooth bg-white">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="flex items-center justify-center gap-2">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free worldwide shipping on orders over $50 | Fast 5-day delivery</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-camera text-2xl text-gray-900"></i>
+                    <span class="text-2xl font-bold text-gray-900 hidden sm:inline">Photography Is Us</span>
+                    <span class="text-xl font-bold text-gray-900 sm:hidden">Photo</span>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu hidden md:flex md:items-center md:gap-8">
+                    <a href="#features" class="text-gray-700 hover:text-gray-900 font-medium transition duration-300">Features</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-gray-900 font-medium transition duration-300">Benefits</a>
+                    <a href="#faq" class="text-gray-700 hover:text-gray-900 font-medium transition duration-300">FAQ</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-gray-900 font-medium transition duration-300">Reviews</a>
+                </nav>
+
+                <!-- Search Bar (Hidden on Mobile) -->
+                <div class="hidden lg:flex items-center bg-gray-100 rounded-full px-4 py-2 gap-2 flex-1 max-w-xs mx-8">
+                    <i class="fas fa-search text-gray-500"></i>
+                    <input type="text" placeholder="Search..." class="bg-transparent outline-none text-sm text-gray-700 w-full" aria-label="Search products">
+                </div>
+
+                <!-- CTA Button (Hidden on Mobile) -->
+                <a href="https://led.com" class="hidden md:block btn-primary bg-gray-900 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition duration-300">
+                    Shop Now
+                </a>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger md:hidden" id="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-screen min-h-96 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1504093376055-b3094b674dcb?w=1600&h=900&fit=crop&q=80" alt="Professional photography equipment" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                Photography Is Us
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-100 mb-8 font-light leading-relaxed">
+                Best Photography Kit
+            </p>
+            <p class="text-base md:text-lg text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Professional-grade equipment designed for photographers who demand excellence. From LED lighting to premium tripods and pro equipment, we have everything you need.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://led.com" class="btn-primary bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-lg">
+                    Shop Now
+                </a>
+                <a href="#features" class="btn-primary bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Essential Photography Features
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Everything you need to capture stunning moments with professional quality equipment
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1: LED Lighting -->
+                <div class="feature-card bg-white rounded-xl p-8 border border-gray-100">
+                    <div class="bg-gradient-to-br from-yellow-400 to-orange-400 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">LED Lighting</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Professional LED lighting kits with adjustable color temperature and intensity. Perfect for studio and outdoor photography sessions.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Adjustable color temperature</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Low heat output</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Energy efficient</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Tripods -->
+                <div class="feature-card bg-white rounded-xl p-8 border border-gray-100">
+                    <div class="bg-gradient-to-br from-blue-400 to-cyan-400 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-gopuram text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Professional Tripods</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Heavy-duty tripods with smooth pan and tilt heads. Designed for stability and precision in any shooting condition.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Carbon fiber construction</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Quick-release plate</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Maximum stability</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: Pro Equipment -->
+                <div class="feature-card bg-white rounded-xl p-8 border border-gray-100">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-camera text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pro Equipment</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Complete range of professional photography equipment including lenses, reflectors, and accessories for every need.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Premium lenses</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Studio reflectors</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-green-500"></i>
+                            <span>Complete accessories</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Why Choose Us
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    We're committed to providing exceptional value and service to our customers
+                </p>
+            </div>
+
+            <!-- Benefit 1: Free Delivery -->
+            <div class="mb-20 bg-white rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                        <div class="mb-6">
+                            <div class="inline-block bg-green-100 rounded-full p-4 mb-6">
+                                <i class="fas fa-truck text-green-600 text-3xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Free Delivery
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Enjoy complimentary shipping on all orders. We handle the logistics so you can focus on capturing perfect moments. No hidden fees, no surprises.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Free shipping worldwide</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">No minimum order required</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Insured packages</span>
+                            </li>
+                        </ul>
+                        <a href="https://led.com" class="btn-primary inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-green-700 transition duration-300 w-fit">
+                            Shop Now
+                        </a>
+                    </div>
+                    <div class="h-64 md:h-auto order-1 md:order-2 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=800&h=600&fit=crop&q=80" alt="Free delivery service" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefit 2: Fast Shipping -->
+            <div class="mb-20 bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="h-64 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800&h=600&fit=crop&q=80" alt="Fast shipping service" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:p-12 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <div class="inline-block bg-blue-100 rounded-full p-4 mb-6">
+                                <i class="fas fa-bolt text-blue-600 text-3xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Fast Shipping
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Get your equipment quickly with our expedited shipping options. Most orders are processed and shipped within 24 hours, with delivery in just 5 business days.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-blue-500 text-xl"></i>
+                                <span class="text-gray-700">5-day delivery guarantee</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-blue-500 text-xl"></i>
+                                <span class="text-gray-700">24-hour order processing</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-blue-500 text-xl"></i>
+                                <span class="text-gray-700">Real-time tracking</span>
+                            </li>
+                        </ul>
+                        <a href="https://led.com" class="btn-primary inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300 w-fit">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefit 3: High Quality Products -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                        <div class="mb-6">
+                            <div class="inline-block bg-purple-100 rounded-full p-4 mb-6">
+                                <i class="fas fa-star text-purple-600 text-3xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            High Quality Products
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Every item in our collection is carefully selected and tested for quality. We partner with leading manufacturers to bring you professional-grade equipment at competitive prices.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-purple-500 text-xl"></i>
+                                <span class="text-gray-700">Premium brand partnerships</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-purple-500 text-xl"></i>
+                                <span class="text-gray-700">Quality assurance testing</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-purple-500 text-xl"></i>
+                                <span class="text-gray-700">Warranty coverage included</span>
+                            </li>
+                        </ul>
+                        <a href="https://led.com" class="btn-primary inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-purple-700 transition duration-300 w-fit">
+                            Explore Collection
+                        </a>
+                    </div>
+                    <div class="h-64 md:h-auto order-1 md:order-2 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=800&h=600&fit=crop&q=80" alt="High quality photography products" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                    Loved by Photographers
+                </h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    See what professional photographers are saying about our equipment
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-700">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "The LED lighting kit transformed my studio setup. The color accuracy and reliability are exceptional. I couldn't be happier with the quality!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">Sarah Mitchell</p>
+                            <p class="text-sm text-gray-400">Professional Photographer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-700">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "Fast shipping and excellent customer service. The tripod is incredibly stable and the price is unbeatable. Highly recommended!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">James Chen</p>
+                            <p class="text-sm text-gray-400">Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-800 rounded-xl p-8 hover:shadow-lg transition duration-300 border border-gray-700">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        "Best photography kit I've purchased. The quality is outstanding and the free delivery made it even better. Will definitely order again!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full"></div>
+                        <div>
+                            <p class="font-bold">Emma Rodriguez</p>
+                            <p class="text-sm text-gray-400">Studio Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Find answers to common questions about our products and services
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">What is included in the photography kit?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            Our best photography kit includes professional LED lighting systems, heavy-duty tripods, and a comprehensive range of pro equipment including lenses, reflectors, and essential accessories. Each kit is carefully curated for both beginners and professionals.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">Do you offer international shipping?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            Yes! We offer free worldwide shipping on all orders. Delivery typically takes 5 business days to most locations. All packages are insured and come with real-time tracking so you can monitor your order every step of the way.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">What is your return policy?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            We stand behind our products with a 100% satisfaction guarantee. If you're not completely satisfied with your purchase, we offer a full refund within 30 days of purchase. No questions asked. Your satisfaction is our priority.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">Are the products covered by warranty?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            Yes, all our products come with comprehensive warranty coverage. LED lighting systems have a 2-year warranty, tripods have a 3-year warranty, and all pro equipment is covered for manufacturing defects. Extended warranties are also available.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">How do I track my order?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            Once your order ships, you'll receive a tracking number via email. You can use this number to monitor your package in real-time on our tracking portal. You'll also receive email notifications at each stage of delivery.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-trigger w-full px-6 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition duration-300 text-left" onclick="toggleAccordion(this)">
+                        <span class="font-bold text-gray-900 text-lg">Do you offer bulk discounts?</span>
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white text-gray-700 leading-relaxed">
+                            Yes! We offer special pricing for bulk orders and professional purchases. Contact our sales team at admin@led.com to discuss your requirements and receive a customized quote.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1516035069371-29ad0abe9a2a?w=1600&h=800&fit=crop&q=80" alt="Photography studio setup" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+                    Ready to Elevate Your Photography?
+                </h2>
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                    Join thousands of photographers who trust us for their professional equipment. Start your journey with our best photography kit today.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://led.com" class="btn-primary bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 inline-block text-center">
+                        Shop Now
+                    </a>
+                    <a href="#faq" class="btn-primary bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition duration-300 inline-block text-center">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Shipping Policy -->
+                <div class="bg-white rounded-lg p-8 shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-blue-100 rounded-full p-3">
+                            <i class="fas fa-shipping-fast text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Shipping Policy</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        <span class="font-semibold">Fast Worldwide Shipping (5 days delivery)</span> - We offer free shipping on all orders worldwide with guaranteed delivery within 5 business days. All packages are insured and tracked in real-time.
+                    </p>
+                </div>
+
+                <!-- Returns Policy -->
+                <div class="bg-white rounded-lg p-8 shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-green-100 rounded-full p-3">
+                            <i class="fas fa-undo text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Returns Policy</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        <span class="font-semibold">100% Satisfaction Guarantee - Full refund upon return</span> - We stand behind our products. If you're not completely satisfied, return your purchase within 30 days for a full refund, no questions asked.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-camera text-white text-2xl"></i>
+                        <h4 class="text-xl font-bold text-white">Photography Is Us</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Premium photography equipment and professional-grade kits for photographers worldwide.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="YouTube">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#features" class="text-gray-400 hover:text-white transition duration-300">Features</a>
+                        </li>
+                        <li>
+                            <a href="#benefits" class="text-gray-400 hover:text-white transition duration-300">Benefits</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://led.com" class="text-gray-400 hover:text-white transition duration-300">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Shipping Info</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Returns</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="mailto:admin@led.com" class="text-gray-400 hover:text-white transition duration-300">Contact: admin@led.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-sm text-gray-400">
+                        &copy; 2024 Photography Is Us. All rights reserved.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 md:justify-end">
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Accordion Toggle Function
+        function toggleAccordion(button) {
+            const accordionItem = button.parentElement;
+            const content = accordionItem.querySelector('.accordion-content');
+            const isActive = accordionItem.classList.contains('active');
+
+            // Close all other accordion items
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if (item !== accordionItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            if (isActive) {
+                accordionItem.classList.remove('active');
+            } else {
+                accordionItem.classList.add('active');
+            }
+        }
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .accordion-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
