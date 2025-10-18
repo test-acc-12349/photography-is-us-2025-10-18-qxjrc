@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photography Is Us Blog - Best Photography Kit with LED Lighting, Tripods, and Pro Equipment. Free delivery, fast shipping, and high quality products.">
+    <meta name="keywords" content="photography, camera kit, LED lighting, tripods, professional equipment, photography blog, photography tips">
+    <meta name="author" content="Photography Is Us">
+    <meta property="og:title" content="Photography Is Us Blog - Photography Tips & Guides">
+    <meta property="og:description" content="Discover expert photography guides, tips, and tutorials on LED lighting, equipment, and professional techniques.">
+    <meta property="og:type" content="website">
+    <title>Photography Is Us Blog - Photography Tips, Guides & Tutorials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .accordion-item {
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1f2937;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        
+        .announcement-bar {
+            background: linear-gradient(90deg, #1f2937 0%, #374151 100%);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="scroll-smooth bg-white">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="flex items-center justify-center gap-2">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free worldwide shipping on orders over $50 | Fast 5-day delivery</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc" class="flex items-center gap-2">
+                    <i class="fas fa-camera text-2xl text-gray-900"></i>
+                    <span class="text-2xl font-bold text-gray-900 hidden sm:inline">Photography Is Us</span>
+                    <span class="text-xl font-bold text-gray-900 sm:hidden">Photo</span>
+                </a>
+
+                <!-- Back Navigation -->
+                <nav class="flex items-center gap-8">
+                    <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc" class="text-gray-700 hover:text-gray-900 font-medium transition duration-300">
+                        ← Back
+                    </a>
+                </nav>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger md:hidden" id="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Our Blog
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Expert guides, tips, and tutorials on professional photography equipment, lighting techniques, and best practices to elevate your craft.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Blog Post -->
+            <div class="mb-24">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 tracking-tight">
+                    Latest Post
+                </h2>
+                
+                <div class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                        <!-- Featured Image -->
+                        <div class="h-64 md:h-full overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-lightbulb text-6xl text-orange-400 mb-4"></i>
+                                <p class="text-gray-600 font-semibold">Professional Photography Lighting</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Featured Content -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center">
+                            <div class="mb-4">
+                                <span class="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">
+                                    Featured
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                                Getting Started with Our Platform
+                            </h3>
+                            
+                            <div class="flex items-center gap-2 mb-6 text-gray-500 text-sm">
+                                <i class="fas fa-calendar"></i>
+                                <span>October 18, 2025</span>
+                            </div>
+                            
+                            <p class="text-gray-700 leading-relaxed mb-8 line-clamp-4">
+                                Master professional photography lighting with this comprehensive guide. Discover how LED systems revolutionize modern photography through superior heat control, energy efficiency, and adjustable color temperature capabilities. Learn the fundamentals of three-point lighting—key light, fill light, and back light—to create dimensionally lit, professional-quality images. Understand color temperature management, essential equipment selection, and practical positioning techniques.
+                            </p>
+                            
+                            <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc/blog/getting-started-with-our-platform.html" class="btn-primary inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition duration-300 w-fit">
+                                Read More
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 tracking-tight">
+                    More Posts Coming Soon
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Empty State Cards -->
+                    <div class="blog-card bg-white rounded-xl p-8 border border-gray-200 hover:border-gray-300 text-center">
+                        <div class="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-pen-fancy text-gray-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Coming Soon
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            New photography tips and guides are being prepared. Check back soon for expert content.
+                        </p>
+                    </div>
+
+                    <div class="blog-card bg-white rounded-xl p-8 border border-gray-200 hover:border-gray-300 text-center">
+                        <div class="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-pen-fancy text-gray-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Coming Soon
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            New photography tips and guides are being prepared. Check back soon for expert content.
+                        </p>
+                    </div>
+
+                    <div class="blog-card bg-white rounded-xl p-8 border border-gray-200 hover:border-gray-300 text-center">
+                        <div class="bg-gray-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-pen-fancy text-gray-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">
+                            Coming Soon
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            New photography tips and guides are being prepared. Check back soon for expert content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Categories Section -->
+            <div class="mt-24 pt-24 border-t border-gray-200">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 tracking-tight">
+                    Blog Categories
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Lighting Category -->
+                    <div class="blog-card bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-8 border border-yellow-100">
+                        <div class="bg-gradient-to-br from-yellow-400 to-orange-400 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Lighting
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Master LED lighting, color temperature, and professional lighting setups.
+                        </p>
+                        <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold text-sm transition duration-300">
+                            Explore →
+                        </a>
+                    </div>
+
+                    <!-- Equipment Category -->
+                    <div class="blog-card bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-8 border border-blue-100">
+                        <div class="bg-gradient-to-br from-blue-400 to-cyan-400 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-camera text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Equipment
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Comprehensive guides on tripods, cameras, lenses, and accessories.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold text-sm transition duration-300">
+                            Explore →
+                        </a>
+                    </div>
+
+                    <!-- Techniques Category -->
+                    <div class="blog-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-100">
+                        <div class="bg-gradient-to-br from-purple-400 to-pink-400 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-wand-magic-sparkles text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Techniques
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Learn professional photography techniques and composition tips.
+                        </p>
+                        <a href="#" class="text-purple-600 hover:text-purple-700 font-semibold text-sm transition duration-300">
+                            Explore →
+                        </a>
+                    </div>
+
+                    <!-- Tips & Tricks Category -->
+                    <div class="blog-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
+                        <div class="bg-gradient-to-br from-green-400 to-emerald-400 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-lightbulb text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">
+                            Tips & Tricks
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Practical tips and tricks to improve your photography skills.
+                        </p>
+                        <a href="#" class="text-green-600 hover:text-green-700 font-semibold text-sm transition duration-300">
+                            Explore →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1516035069371-29ad0abe9a2a?w=1600&h=800&fit=crop&q=80" alt="Photography studio setup" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+                    Ready to Elevate Your Photography?
+                </h2>
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                    Join thousands of photographers who trust us for their professional equipment. Start your journey with our best photography kit today.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://led.com" class="btn-primary bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 inline-block text-center">
+                        Shop Now
+                    </a>
+                    <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc" class="btn-primary bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition duration-300 inline-block text-center">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Shipping Policy -->
+                <div class="bg-white rounded-lg p-8 shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-blue-100 rounded-full p-3">
+                            <i class="fas fa-shipping-fast text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Shipping Policy</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        <span class="font-semibold">Fast Worldwide Shipping (5 days delivery)</span> - We offer free shipping on all orders worldwide with guaranteed delivery within 5 business days. All packages are insured and tracked in real-time.
+                    </p>
+                </div>
+
+                <!-- Returns Policy -->
+                <div class="bg-white rounded-lg p-8 shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-green-100 rounded-full p-3">
+                            <i class="fas fa-undo text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Returns Policy</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        <span class="font-semibold">100% Satisfaction Guarantee - Full refund upon return</span> - We stand behind our products. If you're not completely satisfied, return your purchase within 30 days for a full refund, no questions asked.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-camera text-white text-2xl"></i>
+                        <h4 class="text-xl font-bold text-white">Photography Is Us</h4>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Premium photography equipment and professional-grade kits for photographers worldwide.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="YouTube">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc#features" class="text-gray-400 hover:text-white transition duration-300">Features</a>
+                        </li>
+                        <li>
+                            <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc#benefits" class="text-gray-400 hover:text-white transition duration-300">Benefits</a>
+                        </li>
+                        <li>
+                            <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="https://test-acc-12349.github.io/photography-is-us-2025-10-18-qxjrc#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Support</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://led.com" class="text-gray-400 hover:text-white transition duration-300">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Shipping Info</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Returns</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="mailto:admin@led.com" class="text-gray-400 hover:text-white transition duration-300">Contact: admin@led.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <p class="text-sm text-gray-400">
+                        &copy; 2024 Photography Is Us. All rights reserved.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 md:justify-end">
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                        <span class="text-gray-600 hidden sm:inline">|</span>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white transition duration-300">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                if (navMenu) {
+                    navMenu.classList.toggle('active');
+                }
+            });
+        }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (hamburger) hamburger.classList.remove('active');
+                if (navMenu) navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.blog-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
